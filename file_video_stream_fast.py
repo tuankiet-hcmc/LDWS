@@ -70,7 +70,7 @@ class FileVideoStream:
 
 		image = self.adjust_gamma(image, gamma=1.5)
 
-		# image = self.denoise(image)
+		image = self.denoise(image)
 		# if color is True:
 		# 	image = self.color_selection(image)
 
