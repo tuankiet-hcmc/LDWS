@@ -6,7 +6,7 @@ import numpy as np
 
 def preprocess_image(image, color=True):
 
-    image = adjust_gamma(image, gamma=1.5)
+    # image = adjust_gamma(image, gamma=1.5)
 
     image = denoise(image)
     if color is True:

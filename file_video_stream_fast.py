@@ -50,9 +50,9 @@ class FileVideoStream:
 					self.stop()
 					return
 				framed = imutils.resize(frame, width=450)
-				# preprocessed_image = self.preprocess_image(framed, color=True)
+				preprocessed_image = self.preprocess_image(framed, color=True)
 				# add the frame to the queue
-				self.Q.put((framed, framed))
+				self.Q.put((framed, preprocessed_image))
 
 	def read(self):
 		# return next frame in the queue
@@ -70,13 +70,13 @@ class FileVideoStream:
 
 		image = self.adjust_gamma(image, gamma=1.5)
 
-		image = self.denoise(image)
-		if color is True:
-			image = self.color_selection(image)
+		# image = self.denoise(image)
+		# if color is True:
+		# 	image = self.color_selection(image)
 
-		image = cv2.Canny(image, 30, 60, apertureSize = 3)
+		# image = cv2.Canny(image, 30, 60, apertureSize = 3)
 
-		image = self.region_of_interest(image)
+		# image = self.region_of_interest(image)
 
 		return image
 	
