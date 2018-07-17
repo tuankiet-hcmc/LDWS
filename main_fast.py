@@ -3,6 +3,7 @@ from imutils.video import FPS
 import time
 from detect_lane import *
 from file_video_stream_fast import FileVideoStream
+from preprocessing_image import *
 # from blink import *
 
 print("[INFO] starting video file thread...")
@@ -38,6 +39,8 @@ if __name__ == '__main__':
 
         # detector2 = LaneDetector()
         # processed_img2 = detector2.process(frame2, False)
+
+        preprocessed_image = preprocess_image(preprocessed_image, True)
 
         detector3 = LaneDetector()
         processed_img3 = detector3.process(frame3, preprocessed_image)

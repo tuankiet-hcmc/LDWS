@@ -50,9 +50,9 @@ class FileVideoStream:
 					self.stop()
 					return
 				framed = imutils.resize(frame, width=450)
-				preprocessed_image = self.preprocess_image(framed, color=True)
+				# preprocessed_image = self.preprocess_image(framed, color=True)
 				# add the frame to the queue
-				self.Q.put((framed, preprocessed_image))
+				self.Q.put((framed, framed))
 
 	def read(self):
 		# return next frame in the queue
