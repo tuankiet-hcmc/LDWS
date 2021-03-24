@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 def lane_marking_detection(image, color=True):
-    if color is True:
-        image = color_selection(image)
+    # if color is True:
+    #     image = color_selection(image)
     image = cv2.Canny(image, 30, 60, apertureSize = 3)
     return image
 

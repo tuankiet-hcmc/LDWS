@@ -71,8 +71,8 @@ class FileVideoStream:
 		image = self.adjust_gamma(image, gamma=1.5)
 
 		image = self.denoise(image)
-		# if color is True:
-		# 	image = self.color_selection(image)
+		if color is True:
+			image = self.color_selection(image)
 
 		# image = cv2.Canny(image, 30, 60, apertureSize = 3)
 
